@@ -1,15 +1,15 @@
 // Retrieve plugins for gradle.
 buildscript {
     repositories {
+        mavenCentral()
         maven {
             name = "forge"
-            url = "http://files.minecraftforge.net/maven"
+            url = "https://files.minecraftforge.net/maven"
         }
         maven {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
-        mavenCentral()
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
@@ -39,7 +39,7 @@ repositories {
 apply plugin: 'forge'
 apply plugin: 'java'
 apply from: 'automation.gradle'
-
+compileJava.options.encoding = 'UTF-8'
 // Set build properties.
 sourceCompatibility = version_java
 targetCompatibility = version_java
